@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestion-Aula</title><link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar"><div class="brand"><div class="brand-icon">GA</div><div><strong>Gestion-Aula</strong><small>Administración académica</small></div></div>
+<nav id="navigation">
+<button class="nav-link active" data-section="inicio"><span>⌂</span> Inicio</button>
+<button class="nav-link" data-section="aulas"><span>▦</span> Aulas</button>
+<button class="nav-link" data-section="profesores"><span>♙</span> Profesores</button>
+<button class="nav-link" data-section="franjas-horarias"><span>◷</span> Franjas horarias</button>
+<button class="nav-link" data-section="reservas"><span>▤</span> Reservas</button>
+</nav><div class="sidebar-bottom"><span class="status-dot"></span> API Gestion-Aula</div></aside>
+<main class="main"><header class="topbar"><div><span class="eyebrow">GESTIÓN DE ESPACIOS</span><h1 id="page-title">Panel principal</h1></div><div class="api-state"><span class="status-dot"></span> <span id="api-status">Comprobando conexión...</span></div></header>
+<div id="notice" class="notice hidden"></div>
+<section id="home-section" class="section">
+<div class="welcome"><div><span class="eyebrow light">BIENVENIDO</span><h2>Organiza tus espacios<br>de aprendizaje.</h2><p>Administra aulas, profesores, horarios y reservas desde un único lugar.</p></div><div class="welcome-mark">GA</div></div>
+<div class="stats"><article class="stat-card"><span>Aulas registradas</span><strong id="count-aulas">—</strong><small>Espacios disponibles</small></article><article class="stat-card"><span>Profesores</span><strong id="count-profesores">—</strong><small>Personal docente</small></article><article class="stat-card"><span>Franjas horarias</span><strong id="count-franjas-horarias">—</strong><small>Tramos configurados</small></article><article class="stat-card"><span>Reservas</span><strong id="count-reservas">—</strong><small>Reservas registradas</small></article></div>
+<div class="home-bottom"><div class="panel"><div class="panel-heading"><div><span class="eyebrow">ACCESO RÁPIDO</span><h3>Gestión de la aplicación</h3></div></div><div class="quick-grid"><button data-go="aulas">▦ <b>Gestionar aulas</b><small>Consultar y administrar espacios</small></button><button data-go="profesores">♙ <b>Gestionar profesores</b><small>Consultar y administrar docentes</small></button><button data-go="franjas-horarias">◷ <b>Gestionar horarios</b><small>Configurar franjas horarias</small></button><button data-go="reservas">▤ <b>Gestionar reservas</b><small>Crear y consultar reservas</small></button></div></div><div class="panel info-panel"><span class="eyebrow">ESTADO DEL SISTEMA</span><h3>Conexión con el backend</h3><p>Esta interfaz utiliza la API REST de Spring Boot. Los datos se almacenan en MySQL.</p><div class="tech-tags"><span>Spring Boot</span><span>MySQL</span><span>JavaScript</span></div></div></div>
+</section>
+<section id="data-section" class="section hidden"><div class="toolbar"><div><p id="section-description">Consulta y administra los registros.</p></div><button id="add-button" class="primary-button">＋ Nuevo registro</button></div>
+<div id="filters" class="filters hidden"><label>Ordenadores<select id="filter-computers"><option value="">Todos</option><option value="true">Sí</option><option value="false">No</option></select></label><label>Capacidad mayor que<input id="filter-capacity" type="number" min="0" placeholder="Ej. 20"></label><button id="apply-filters" class="secondary-button">Filtrar</button><button id="clear-filters" class="text-button">Limpiar</button></div>
+<div class="panel table-panel"><div class="table-heading"><h3 id="table-title">Registros</h3><span id="record-count" class="count-label">0 registros</span></div><div class="table-wrap"><table><thead id="table-head"></thead><tbody id="table-body"></tbody></table></div><div id="empty-state" class="empty hidden">No hay registros todavía. Puedes crear uno con el botón «Nuevo registro».</div></div>
+</section>
+<footer>Gestion-Aula · Aplicación de gestión de reservas de aulas</footer></main></div>
+<div id="modal" class="modal hidden"><div class="modal-card"><div class="modal-header"><div><span class="eyebrow">GESTION-AULA</span><h2 id="modal-title">Nuevo registro</h2></div><button id="close-modal" class="close-button" aria-label="Cerrar">×</button></div><form id="record-form"><div id="form-fields" class="form-fields"></div><div class="modal-actions"><button type="button" id="cancel-modal" class="secondary-button">Cancelar</button><button type="submit" class="primary-button">Guardar</button></div></form></div></div>
+<script src="/app.js"></script></body></html>
